@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cake Online</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <h1>Cake Delivery</h1>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Delicious Cake Delivered Fast</h2>
+            <p>Choose from our exclusive menu and get your cake delivered in no time.</p>
+            <button onclick="scrollToOrder()">Order Now</button>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="red.jfif" alt="Red Velvet">
+                <h3>Red Velvet</h3>
+                <p>450 only</p>
+            </div>
+            <div class="menu-item">
+                <img src="black.jfif"  alt="Blackforest">
+                <h3>Blakforest</h3>
+                <p>400 only</p>
+            </div>
+            
+            </div>
+            <div class="menu-item">
+                <img src="download.jfif" width="280" height="173" alt="Chocalate">
+                <h3>Chocalate</h3>
+                <p>350 only</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order">
+        <h2>Place Your Order</h2>
+        <form id="order-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="food">Select Cake:</label>
+            <select id="food" name="food" required>
+                <option value="pizza">Red Velvet - 450</option>
+                <option value="burger">Blackforest - 400</option>
+                <option value="salad">Chocalate - 350</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <button type="submit">Order Now</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Cake Delivery. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    
+function scrollToOrder() {
+    document.getElementById("order").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Handle form submission
+document.getElementById("order-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const food = document.getElementById("food").value;
+    const quantity = document.getElementById("quantity").value;
+    
+    alert(`Thank you ${name}! You have ordered ${quantity} ${food}(s).`);
+});
+
+    </script>
+</body>
+</html>
